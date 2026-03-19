@@ -29,11 +29,9 @@ For each season (not each episode anymore), determine the primary topics for the
 
 ## Data Cleaning and stop word removal
 
-I removed stopwords, also any under 3 characters and also a few 
-non-stopwords that I felt did not contribute to the topics. 
+I removed stopwords, also any under 3 characters and also a few non-stopwords that I felt did not contribute to the topics.
 
-I made the choice to leave in the character names. Knowing the show I felt different seasons of the
-show focused on different characters, I think that came through in both topic analysis methods.
+I made the choice to leave in the character names. Knowing the show I felt different seasons of the show focused on different characters, I think that came through in both topic analysis methods.
 
 ```{r}
 common_words <- c("wimowheh", "googi","yeah", "hey", "gonna", "guys", "people")
@@ -89,7 +87,6 @@ office_tfidf %>%
 
 ```
 
-
 ## LDA Analysis
 
 ```{r}
@@ -117,13 +114,10 @@ office_lda_beta %>%
 
 ```
 
+I found the above analysis broke the show into topics, but did not tell me which seasons corresponded to which topics.
 
+I found the gamma statistic which gives the probability of the topic being in each document. This would break down which topics correspond to each season of the show.
 
-I found the above analysis broke the show into topics, but did not tell me which 
-seasons corresponded to which topics. 
-
-I found the gamma statistic which gives the probability of the topic being in each document.
-This would break down which topics correspond to each season of the show.
 ```{r}
 
 office_lda_gamma <- office_lda %>% 
@@ -140,4 +134,3 @@ office_lda_gamma %>%
   )
 
 ```
-
